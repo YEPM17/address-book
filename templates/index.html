@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Folio 通讯录 — 书签、多联系方式与 Excel 导入导出">
+  <title>{{ app_name }} · Folio</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="主导航">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">F</div>
+        <div class="brand-text">
+          <div class="brand-name">Folio</div>
+          <div class="brand-sub">通讯录</div>
+        </div>
+      </div>
+
+      <button class="side-cta" type="button" data-action="create">
+        <span class="icon" data-icon="plus"></span>
+        新建联系人
+      </button>
+
+      <nav class="side-nav">
+        <button class="nav-item is-active" type="button" data-view="all">
+          <span class="icon" data-icon="users"></span>
+          <span>全部联系人</span>
+          <em id="nav-all-count">0</em>
+        </button>
+        <button class="nav-item" type="button" data-view="bookmarked">
+          <span class="icon" data-icon="star"></span>
+          <span>书签</span>
+          <em id="nav-star-count">0</em>
+        </button>
+      </nav>
+
+      <section class="side-section">
+        <div class="side-title">
+          <span>标签</span>
+          <span class="side-title-count" id="tag-total">0</span>
+        </div>
+        <div class="tag-list" id="tag-list"></div>
+      </section>
+
+      <footer class="side-foot">
+        <div class="storage-line">
+          <span class="icon" data-icon="database"></span>
+          本地 SQLite 存储
+        </div>
+        <div class="storage-sub" id="method-count">0 条联系方式</div>
+      </footer>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" type="button" id="menu-btn" aria-label="打开导航">
+          <span class="icon" data-icon="menu"></span>
+        </button>
+
+        <div class="page-heading">
+          <p class="eyebrow">ADDRESS BOOK</p>
+          <h1 id="page-title">全部联系人</h1>
+          <p class="page-sub" id="page-sub">正在加载…</p>
+        </div>
+
+        <label class="searchbox" for="search">
+          <span class="icon" data-icon="search"></span>
+          <input id="search" type="search" placeholder="搜索姓名、公司、电话或标签…" autocomplete="off" spellcheck="false">
+          <kbd>/</kbd>
+        </label>
+
+        <div class="topbar-actions">
+          <button class="btn btn-ghost" type="button" data-action="import">
+            <span class="icon" data-icon="upload"></span>
+            <span class="btn-label">导入 Excel</span>
+          </button>
+          <button class="btn btn-ghost" type="button" data-action="export">
+            <span class="icon" data-icon="download"></span>
+            <span class="btn-label">导出</span>
+          </button>
+          <button class="btn btn-primary" type="button" data-action="create">
+            <span class="icon" data-icon="plus"></span>
+            <span class="btn-label">新建联系人</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="toolbar">
+        <div class="filter-slot" id="filter-slot"></div>
+        <div class="toolbar-right">
+          <span class="result-count" id="result-count"></span>
+          <div class="segmented" role="group" aria-label="切换布局">
+            <button type="button" class="is-active" data-layout="list" aria-label="列表视图" aria-pressed="true">
+              <span class="icon" data-icon="list"></span>
+            </button>
+            <button type="button" data-layout="grid" aria-label="卡片视图" aria-pressed="false">
+              <span class="icon" data-icon="grid"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section id="contact-area" aria-live="polite" aria-busy="true"></section>
+    </main>
+  </div>
+
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="联系人详情" aria-hidden="true"></aside>
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</body>
+</html>
