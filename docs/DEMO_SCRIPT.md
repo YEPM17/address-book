@@ -28,7 +28,7 @@ shows 14 contacts / 5 bookmarks.
 | 8 | 2:15–2:25 | Click **导入 3 位联系人**; show toast and new rows. | “确认后只写入无重复、校验通过的数据。” |
 | 9 | 2:25–2:40 | Click **导出**; open the downloaded file in Excel (optional). | “导出的 Excel 一行一位联系人，每类信息都有独立列，并附带格式说明页。” |
 | 10 | 2:40–2:50 | Toggle card view, then narrow the window to show mobile layout. | “列表和卡片两种视图，手机宽度下也能正常使用。” |
-| 11 | 2:50–3:00 | End card: repository URL / team name. | “项目地址见博客，谢谢观看。” |
+| 11 | 2:50–3:00 | End card: repository URL / author name. | “项目地址见博客，谢谢观看。” |
 
 ## Recording tips
 

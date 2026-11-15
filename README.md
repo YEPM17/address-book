@@ -187,14 +187,11 @@ error reporting.
 - [Deployment guide](docs/DEPLOYMENT.md)
 - [Demo script](docs/DEMO_SCRIPT.md)
 
-## Team
+## Author
 
-Replace these placeholders before submission.
-
-| Member | Student ID | GitHub | Main responsibility |
+| Name | Student ID | GitHub | Contribution |
 | --- | --- | --- | --- |
-| Member A (TODO) | TODO | TODO | backend, database, Excel engine, tests |
-| Member B (TODO) | TODO | TODO | UI/UX, interactions, documentation, demo |
+| 刘冉 | 832401215 | TODO | All modules: database, API, Excel engine, UI, tests, documentation, demo |
 
 Course: [2601_FZU-MU_SE](https://bbs.csdn.net/forums/2601_MU_SE_FZU) · Assignment:
 [Extreme Programming](https://bbs.csdn.net/topics/620593436)

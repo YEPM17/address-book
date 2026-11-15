@@ -3,7 +3,7 @@
 The application is a standard WSGI app with a single writable SQLite file, so it
 runs on any small Linux VM or container platform. **No public instance was
 deployed for the submitted version** — the optional cloud bonus was not claimed.
-This guide is what the team would follow (and what the reviewer can reproduce).
+This guide is what the author would follow (and what the reviewer can reproduce).
 
 ## 1. Docker (recommended)
 
