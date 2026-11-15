@@ -1,6 +1,6 @@
 # Code Standards — Folio Address Book
 
-These rules are the agreement both team members follow. They are intentionally
+These rules are the standards followed in this project. They are intentionally
 short enough to check in review and concrete enough to settle arguments.
 
 ## 1. Language and naming
@@ -132,7 +132,7 @@ Rules:
 ### Pull requests
 
 - Title mirrors the main commit; description uses `.github/PULL_REQUEST_TEMPLATE.md`.
-- At least one teammate reviews and approves; the author merges.
+- At least one self-review against the PR checklist; the author merges.
 - CI/manual test evidence (command + result) goes into the PR description.
 - Delete the branch after merge.
 - Tag releases `vMAJOR.MINOR.PATCH`; the tag message lists the delivered features.
