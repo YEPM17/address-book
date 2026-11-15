@@ -109,3 +109,37 @@ after a pause may take ~30 seconds.
 - The app has no authentication: deploy it on an intranet, behind a VPN, or add
   a login layer before exposing it to the internet.
 - Uploads are capped at 8 MB; put a reverse-proxy limit in front as well.
+
+## 6. Current deployment (PythonAnywhere, free)
+
+| Item | Value |
+| --- | --- |
+| Public URL | <https://nannan17.pythonanywhere.com/> |
+| Platform | PythonAnywhere Beginner (free) |
+| Python | 3.13 |
+| Database | SQLite at `/home/nannan17/folio_app/instance/addressbook.sqlite3` |
+
+Because PythonAnywhere free accounts have no SSH access, the app is shipped as a
+single `folio_bundle.zip` (project + vendored pure-Python dependencies) and a
+small WSGI bootstrap:
+
+```python
+# /var/www/nannan17_pythonanywhere_com_wsgi.py (simplified)
+HOME = "/home/nannan17"
+APP_DIR = os.path.join(HOME, "folio_app")
+BUNDLE = os.path.join(HOME, "folio_bundle.zip")
+if not os.path.exists(os.path.join(APP_DIR, "app.py")):
+    with zipfile.ZipFile(BUNDLE) as archive:
+        archive.extractall(APP_DIR)
+sys.path.insert(0, APP_DIR)
+sys.path.insert(0, os.path.join(APP_DIR, "vendor"))
+from app import app as application
+```
+
+The WSGI file extracts the bundle on first request, seeds the 14 demo contacts if
+the database is empty, and then serves the normal Flask app. To deploy an update:
+upload a new bundle, delete `/home/nannan17/folio_app`, and reload the web app.
+
+Free-tier limits: 100 CPU seconds/day, 512 MB disk, one web app, no cron/SSH.
+SQLite data persists between restarts; the demo data is recreated only when the
+database is empty.
