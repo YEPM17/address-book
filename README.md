@@ -6,6 +6,8 @@ The UI is in Chinese; the code, commit messages and documentation are in English
 
 ![Contact list](docs/screenshots/01-home-list.png)
 
+**Live demo:** <https://nannan17.pythonanywhere.com/>
+
 ## Feature checklist
 
 | Assignment requirement | Where it is implemented |
@@ -16,7 +18,7 @@ The UI is in Chinese; the code, commit messages and documentation are in English
 | Excel export (25 pts) | `GET /api/export`; one row per contact, labelled columns (`Phone 1`, `Phone 2`, `Email 1`, …), styled header, frozen panes, auto-filter, data validation, “Read Me” sheet |
 | Usable interface | Responsive single-page UI, list/grid views, search, tag filter, detail drawer, edit form, empty/loading/error states, keyboard shortcuts (`/`, `Esc`, `Ctrl/Cmd+K`) |
 | Reproducible | `requirements.txt`, `run.bat` / `run.sh`, Dockerfile, sample workbooks in `sample_data/`, 24 automated tests |
-| Cloud deployment (optional) | Dockerfile + [deployment guide](docs/DEPLOYMENT.md) are ready; no public instance was deployed for this submission |
+| Cloud deployment (optional) | Deployed on PythonAnywhere free tier: <https://nannan17.pythonanywhere.com/> (see [deployment guide](docs/DEPLOYMENT.md)) |
 
 ## Quick start
 
@@ -191,7 +193,7 @@ error reporting.
 
 | Name | Student ID | GitHub | Contribution |
 | --- | --- | --- | --- |
-| 刘冉 | 832401215 | TODO | All modules: database, API, Excel engine, UI, tests, documentation, demo |
+| 刘冉 | 832401215 | [YEPM17](https://github.com/YEPM17) | All modules: database, API, Excel engine, UI, tests, documentation, demo |
 
 Course: [2601_FZU-MU_SE](https://bbs.csdn.net/forums/2601_MU_SE_FZU) · Assignment:
 [Extreme Programming](https://bbs.csdn.net/topics/620593436)
