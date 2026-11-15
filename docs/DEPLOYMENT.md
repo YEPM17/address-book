@@ -1,9 +1,9 @@
 # Deployment Guide
 
 The application is a standard WSGI app with a single writable SQLite file, so it
-runs on any small Linux VM or container platform. **No public instance was
-deployed for the submitted version** — the optional cloud bonus was not claimed.
-This guide is what the author would follow (and what the reviewer can reproduce).
+runs on any small Linux VM or container platform. It is currently deployed at
+<https://nannan17.pythonanywhere.com/> on the PythonAnywhere free tier; the
+sections below document that deployment plus the Docker/VM alternatives.
 
 ## 1. Docker (recommended)
 
