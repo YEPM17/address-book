@@ -74,6 +74,23 @@ volumes:
   file is lost on every deploy.
 - Health check path: `/api/health`.
 
+### Render free plan
+
+The repository includes `render.yaml` for a one-click Blueprint:
+
+1. Push the repository to GitHub.
+2. Render dashboard → **New → Blueprint** → select the repository → **Apply**.
+3. Render builds the Dockerfile and gives a URL like
+   `https://folio-address-book.onrender.com`.
+
+The free plan has **no persistent disk**: the SQLite file is recreated on every
+restart. The Docker `CMD` therefore runs `flask --app app seed-demo` before
+gunicorn, which repopulates the 14 demo contacts when the database is empty.
+For a real deployment add a paid disk at `/data` and set
+`ADDRESSBOOK_DB=/data/addressbook.sqlite3`; the seed step then becomes a no-op.
+Free services also sleep after ~15 minutes of inactivity, so the first request
+after a pause may take ~30 seconds.
+
 ## 4. Environment variables
 
 | Variable | Default | Purpose |
