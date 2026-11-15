@@ -15,4 +15,7 @@ RUN mkdir -p /data
 VOLUME ["/data"]
 
 EXPOSE 8000
-CMD ["gunicorn", "--workers", "2", "--bind", "0.0.0.0:8000", "app:app"]
+# On platform free tiers the filesystem is ephemeral: seed the demo book on
+# every cold start so the public URL is never empty.  With a mounted disk the
+# seed command is a no-op after the first run.
+CMD ["sh", "-c", "python -m flask --app app seed-demo && exec gunicorn --workers 2 --bind 0.0.0.0:${PORT:-8000} app:app"]
