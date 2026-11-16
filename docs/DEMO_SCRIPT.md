@@ -21,7 +21,7 @@ shows 14 contacts / 5 bookmarks.
 | 1 | 0:00–0:12 | Start on the contact list; move the mouse across the header. | “这是 Folio 通讯录，支持书签、多条联系方式，以及 Excel 导入导出。” |
 | 2 | 0:12–0:28 | Click **书签** in the sidebar, then **全部联系人**. | “侧边栏可以只看书签；书签联系人会自动排在最前面。” |
 | 3 | 0:28–0:40 | Click the star on 陈砚, then show the count change; click 书签. | “点一下星标即可收藏或取消，书签数量实时更新。” |
-| 4 | 0:40–1:05 | Open 林晚晴 → scroll the detail drawer. | “详情页展示电话、邮箱、微信、QQ、地址和自定义方式，每条都能一键复制。” |
+| 4 | 0:40–1:05 | Open 林晚晴 → scroll the detail drawer. | “详情页展示电话、邮箱、微信、社交账号、地址和自定义方式，每条都能一键复制。” |
 | 5 | 1:05–1:30 | Click **编辑**; point at the method rows; add one method (e.g. 邮箱), fill a value, save. | “同一个联系人可以有多条电话和邮箱；这里新增一条联系方式并保存。” |
 | 6 | 1:30–1:45 | Click **新建联系人**, fill name/company/phone, switch on 书签, create. | “新建时可以一次录入多种联系方式，并直接加入书签。” |
 | 7 | 1:45–2:15 | Click **导入 Excel** → choose `sample_data/import-demo.xlsx`; show preview statuses. | “导入前会先预览：绿色可导入，黄色是重复联系人，红色是缺少姓名。” |

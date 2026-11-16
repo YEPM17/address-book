@@ -20,8 +20,8 @@ git config --get user.name
 
 Recommended repository settings:
 
-- protect `main`: require a pull request (self-review is acceptable for a solo
-  submission);
+- protect `main`: require a pull request and one approving review from the
+  other member;
 - enable “Automatically delete head branches”;
 - add a short description and topics (`flask`, `sqlite`, `address-book`, `excel`).
 
@@ -80,20 +80,19 @@ git log --stat --oneline
 ```
 
 Take a screenshot of the GitHub **Insights → Commits** page (or the commit list)
-after pushing. A single author filter (`?author=<username>`) is enough for a
-solo submission.
+after pushing. Filter by each author so the screenshot shows both members'
+commits.
 
 ## 5. Preparing this local repository
 
-The checkout already contains the full history authored by 刘冉 and a `v1.0.0`
-tag. To publish it:
+The checkout already contains the full history authored by 刘冉 and 王梓涵 and a
+`v1.0.0` tag. To publish it:
 
 ```bash
 cd address-book
 
 # 1. Point the remote at your repository
-git remote remove origin 2>/dev/null
-git remote add origin https://github.com/<username>/address-book.git
+git remote set-url origin https://github.com/YEPM17/address-book.git
 
 # 2. Push main, the feature branch and the tag
 git push -u origin main
@@ -101,9 +100,10 @@ git push origin feature/contact-ui
 git push origin v1.0.0
 ```
 
-If the GitHub account uses a different e-mail than the one in the commits,
-rewrite the author before pushing (this changes every hash; regenerate the
-commit-history screenshot afterwards):
+The commit e-mails are already set per member. If a member's GitHub account uses
+a different e-mail and you want GitHub to link the commits, rewrite that author
+before pushing (this changes every hash; regenerate the commit-history
+screenshot afterwards):
 
 ```bash
 git filter-branch --env-filter '

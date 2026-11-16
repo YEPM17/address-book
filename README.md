@@ -1,6 +1,6 @@
 # Folio 通讯录 · Address Book
 
-A small, dependency-light address book built for the **EE308FZ Software Engineering — Extreme Programming** assignment (2601_FZU-MU_SE).
+A small, dependency-light address book built by **刘冉 (832401215)** and **王梓涵 (832401220)** for the **EE308FZ Software Engineering — Extreme Programming** assignment (2601_FZU-MU_SE).
 
 The UI is in Chinese; the code, commit messages and documentation are in English.
 
@@ -13,7 +13,7 @@ The UI is in Chinese; the code, commit messages and documentation are in English
 | Assignment requirement | Where it is implemented |
 | --- | --- |
 | Bookmark contacts (25 pts) | `contacts.is_bookmarked`, `PATCH /api/contacts/<id>/bookmark`, star button on every row/card, “书签” filter, bookmarked section sorted first |
-| Multiple contact methods (10 pts) | `contact_methods` 1:N table; phone / email / WeChat / QQ / address / custom (“other”) types, several of each per contact, optional labels such as 工作 or 公司 |
+| Multiple contact methods (10 pts) | `contact_methods` 1:N table; phone / email / WeChat / social / address / custom (“other”) types, several of each per contact, optional labels such as 工作 or 公司 |
 | Excel import (25 pts) | `POST /api/import/preview` + `POST /api/import`; header-driven parser accepts English or Chinese headers, re-ordered/extra columns, `;`-separated multi-values; preview marks rows `ok / duplicate / error`; duplicates are skipped |
 | Excel export (25 pts) | `GET /api/export`; one row per contact, labelled columns (`Phone 1`, `Phone 2`, `Email 1`, …), styled header, frozen panes, auto-filter, data validation, “Read Me” sheet |
 | Usable interface | Responsive single-page UI, list/grid views, search, tag filter, detail drawer, edit form, empty/loading/error states, keyboard shortcuts (`/`, `Esc`, `Ctrl/Cmd+K`) |
@@ -61,7 +61,7 @@ Download the template from the UI (“导入 Excel” → “下载 Excel 模板
 | --- | --- |
 | `Name` | required |
 | `Company`, `Job Title`, `Tags`, `Bookmarked`, `Notes` | optional; tags comma-separated, bookmark `Yes/No` |
-| `Phone 1..n`, `Email 1..n`, `WeChat 1..n`, `QQ 1..n`, `Address 1..n` | one value per column; `;` splits multiple values inside a cell |
+| `Phone 1..n`, `Email 1..n`, `WeChat 1..n`, `Social 1..n`, `Address 1..n` | one value per column; `;` splits multiple values inside a cell |
 | `Other 1 Type`, `Other 1 Value` | custom methods, e.g. `LinkedIn` |
 
 Import is header-driven: columns may be re-ordered, extra columns are ignored,
@@ -189,11 +189,12 @@ error reporting.
 - [Deployment guide](docs/DEPLOYMENT.md)
 - [Demo script](docs/DEMO_SCRIPT.md)
 
-## Author
+## Authors
 
 | Name | Student ID | GitHub | Contribution |
 | --- | --- | --- | --- |
-| 刘冉 | 832401215 | [YEPM17](https://github.com/YEPM17) | All modules: database, API, Excel engine, UI, tests, documentation, demo |
+| 刘冉 | 832401215 | [YEPM17](https://github.com/YEPM17) | Backend, database, Excel engine, API, automated tests, deployment (60%) |
+| 王梓涵 | 832401220 | [xuntachuan](https://github.com/xuntachuan) | UI/UX, front-end interactions, import preview, documentation and demo (40%) |
 
 Course: [2601_FZU-MU_SE](https://bbs.csdn.net/forums/2601_MU_SE_FZU) · Assignment:
 [Extreme Programming](https://bbs.csdn.net/topics/620593436)

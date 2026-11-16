@@ -20,7 +20,7 @@ DEMO_CONTACTS = [
             {"kind": "phone", "label": "座机", "value": "0591-8800 1234"},
             {"kind": "email", "label": "", "value": "wanqing.lin@example.com"},
             {"kind": "wechat", "label": "", "value": "wanqing_l"},
-            {"kind": "qq", "label": "", "value": "100200300"},
+            {"kind": "qq", "label": "", "value": "wanqing_im"},
             {"kind": "address", "label": "公司", "value": "福州市鼓楼区五四路 88 号星野大厦 12F"},
             {"kind": "other", "label": "LinkedIn", "value": "linkedin.com/in/wanqing-lin"},
         ],
@@ -72,7 +72,7 @@ DEMO_CONTACTS = [
         "methods": [
             {"kind": "phone", "label": "", "value": "135 0013 5005"},
             {"kind": "email", "label": "工作", "value": "chengyu.gu@example.com"},
-            {"kind": "qq", "label": "", "value": "200300400"},
+            {"kind": "qq", "label": "", "value": "tangyiran_im"},
         ],
     },
     {
@@ -123,7 +123,7 @@ DEMO_CONTACTS = [
         "notes": "仓储与配送对接，月底对账。",
         "methods": [
             {"kind": "phone", "label": "", "value": "131 0013 1009"},
-            {"kind": "qq", "label": "", "value": "300400500"},
+            {"kind": "qq", "label": "", "value": "qinyuan_im"},
         ],
     },
     {

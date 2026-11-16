@@ -2,7 +2,7 @@
 
 Export layout (one row per contact, one labelled column per value):
     Name | Company | Job Title | Tags | Bookmarked |
-    Phone 1..n | Email 1..n | WeChat 1..n | QQ 1..n | Address 1..n |
+    Phone 1..n | Email 1..n | WeChat 1..n | Social 1..n | Address 1..n |
     Other 1 Type | Other 1 Value | ... | Notes
 
 Import reads that layout by header name, tolerates re-ordered or extra
@@ -37,7 +37,7 @@ KIND_LABELS = {
     "phone": "Phone",
     "email": "Email",
     "wechat": "WeChat",
-    "qq": "QQ",
+    "qq": "Social",
     "address": "Address",
 }
 BASE_FIELDS = ("name", "company", "job_title", "tags", "bookmarked")
@@ -74,13 +74,16 @@ _METHOD_ALIASES = {
     "weixin": "wechat",
     "微信": "wechat",
     "qq": "qq",
+    "social": "qq",
+    "im": "qq",
+    "社交": "qq",
     "address": "address",
     "住址": "address",
     "地址": "address",
 }
 
 _METHOD_RE = re.compile(
-    r"^(?P<kind>phone|tel|telephone|mobile|cell|email|e mail|mail|wechat|we chat|weixin|qq|address|"
+    r"^(?P<kind>phone|tel|telephone|mobile|cell|email|e mail|mail|wechat|we chat|weixin|qq|social|im|address|"
     r"电话|手机|手机号|电话号码|邮箱|电子邮箱|微信|住址|地址)\s*(?:no\.?|#)?\s*(?P<index>\d+)?$"
 )
 _OTHER_TYPE_RE = re.compile(r"^(?:other|其他)\s*(?P<index>\d+)?\s*(?:type|类型)$")

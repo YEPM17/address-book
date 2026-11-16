@@ -57,7 +57,7 @@
     phone: { label: "电话", icon: "phone", placeholder: "手机号或座机，如 138 0013 8000" },
     email: { label: "邮箱", icon: "mail", placeholder: "name@example.com" },
     wechat: { label: "微信", icon: "chat", placeholder: "微信号" },
-    qq: { label: "QQ", icon: "qq", placeholder: "QQ 号" },
+    qq: { label: "社交", icon: "qq", placeholder: "社交账号" },
     address: { label: "地址", icon: "mapPin", placeholder: "省 / 市 / 区 / 详细地址" },
     other: { label: "其他", icon: "link", placeholder: "账号、主页或其它联系方式" },
   };
@@ -732,7 +732,7 @@
                 ${methods.map((method) => methodRowHTML(method)).join("")}
                 <button class="add-method" type="button" id="add-method">${icon("plus")}添加联系方式</button>
               </div>
-              <div class="hint">电话、邮箱、微信、QQ、地址都可以各添加多条，空的联系方式行会被忽略。</div>
+              <div class="hint">电话、邮箱、微信、社交账号、地址都可以各添加多条，空的联系方式行会被忽略。</div>
             </div>
             <div class="field is-full">
               <label for="f-notes">备注</label>

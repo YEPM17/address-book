@@ -132,7 +132,8 @@ Rules:
 ### Pull requests
 
 - Title mirrors the main commit; description uses `.github/PULL_REQUEST_TEMPLATE.md`.
-- At least one self-review against the PR checklist; the author merges.
+- At least one peer review against the PR checklist; the reviewer merges (or
+  the author merges after the reviewer approves).
 - CI/manual test evidence (command + result) goes into the PR description.
 - Delete the branch after merge.
 - Tag releases `vMAJOR.MINOR.PATCH`; the tag message lists the delivered features.
